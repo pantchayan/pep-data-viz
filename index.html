@@ -7,11 +7,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placement Visuals</title>
 </head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .stats-container {
+        margin-top: 2%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .doughnut-chart-container {
+        display: flex;
+        align-items: center;
+    }
+
+    #doughnut-stat {
+        max-width: 300px;
+        font-size: xx-large;
+    }
+
+    #doughnut {
+        max-height: 400px;
+        max-width: 500px;
+    }
+
+    .highest-salary {
+        text-align: center;
+        margin-bottom: 3%;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .stats-container{
+            flex-direction: column;
+        }
+    }
+</style>
 
 <body>
+    <main>
+        <div class="stats-container">
+            <div class="charts-1">
+                <canvas id="salary-based"></canvas>
+            </div>
+            <div class="charts-2">
+                <div class="highest-salary">
+                    <h1>Highest Package - XX LPA</h1>
+                </div>
+                <div class="doughnut-chart-container">
+                    <canvas id="doughnut"></canvas>
+                    <h5 id="doughnut-stat">>76% of students placed with a package of 6LPA+</h5>
+                </div>
 
+                <div class="average-chart-container">
+                    <canvas id="average-graph"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" defer></script>
+    <script src="cleanData.js" defer></script>
     <script src="main.js" defer></script>
 </body>
 
